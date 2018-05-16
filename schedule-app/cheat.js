@@ -1,6 +1,3 @@
-// Resolução da prof. Beatriz Rizental
-// https://github.com/brizental/reprograma-javascript
-
 var appointments = {
   "06h30": {
     "title": "HIIT",
@@ -67,6 +64,8 @@ for (var time in appointments) {
   //                             </div>`
   // !CUIDADO!
 
+
+  var timeDiv = document.createElement("div")
   timeDiv.classList.add("time")
   var timeP = document.createElement("p")
   timeP.textContent = time
