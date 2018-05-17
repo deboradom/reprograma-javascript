@@ -1,3 +1,5 @@
+// json:
+
 var appointments = {
   "06h30": {
     "title": "HIIT",
@@ -49,14 +51,14 @@ var appointments = {
   }
 }
 
-// Um jeito de chamar as propriedades do JSON isoladas
-// for (var propriedades in appointments){
-//   console.log(propriedades + " - " + appointments[propriedades].title + " - " + appointments[propriedades].person)
+// Um jeito de chamar as horario do JSON isoladas
+// for (var horario in appointments){
+//   console.log(horario + " - " + appointments[horario].title + " - " + appointments[horario].person)
 // }
 
 
-// for (var propriedades in appointments){
-//   console.log(propriedades)
+// for (var horario in appointments){
+//   console.log(horario)
 // }
 // // é igual a:
 // for(var i = 0; i < Object.keys(appointments).length ; i++){
@@ -64,29 +66,30 @@ var appointments = {
 // }
 
 
-// Dá pra chamar cada uma das três propriedades individualmente...
+// Dá pra chamar cada uma das três horario individualmente...
 // // ----- horario
-// for (var propriedades in appointments){
-//   console.log(propriedades)
+// for (var horario in appointments){
+//   console.log(horario)
 // }
 
 // // ----- aula
-// for (var propriedades in appointments){
-//   console.log(appointments[propriedades].title)
+// for (var horario in appointments){
+//   console.log(appointments[horario].title)
 // }
 
 // // ----- professor
-// for (var propriedades in appointments){
-//   console.log(appointments[propriedades].person)
+// for (var horario in appointments){
+//   console.log(appointments[horario].person)
 // }
 
+
 // ... ou chamá-las juntas dentro do mesmo 'for'
-for (var propriedades in appointments){
+for (var horario in appointments){
 
   // Isolar os dados do JSON e visualizá-los no console.log pra verificar se estão sendo isolados corretamente
-  // console.log(propriedades)
-  // console.log(appointments[propriedades].title)
-  // console.log(appointments[propriedades].person)
+  // console.log(horario)
+  // console.log(appointments[horario].title)
+  // console.log(appointments[horario].person)
 
  // Criar todas as tags de HTML
   var appointment = document.createElement("div")
@@ -112,11 +115,21 @@ for (var propriedades in appointments){
   timeDiv.appendChild(timeP)
  
   // Inserir os dados do JSON dentro das tags criadas
-  timeP.textContent = propriedades
-  tarefa.textContent = appointments[propriedades].title
-  pessoa.textContent = appointments[propriedades].person
+  timeP.textContent = horario
+  tarefa.textContent = appointments[horario].title
+  pessoa.textContent = appointments[horario].person
   
+  //Pintar bolinha correspondente ao horário de vermelho
+  var date = new Date()
+  var hour = date.getHours()
+
+  console.log(horario.split("h")[0])
+  console.log(hour)
+  console.log(horario.split("h")[0] <= hour)
+
+  if (parseInt(horario.split("h")[0]) <= hour){
+    
+    circle.classList.add("filled")
+    console.log("entrou")
+  }
 }
-
-
-

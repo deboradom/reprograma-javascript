@@ -65,7 +65,25 @@ body {
       top: -5px;
       width: 12px;
       height: 12px;
+
     }
+    
+    .filled{
+      background-color: red;
+    }
+    // .circle.filled {
+    //   background-color: red;
+    //   position: absolute;
+    //   border-radius: 100%;
+    //   border: 2px solid red;
+    //   left: calc(25% - 5px);
+    //   top: -5px;
+    //   width: 12px;
+    //   height: 12px;
+    // }
+
+
+    
 
     .time {
       width: 25%;
